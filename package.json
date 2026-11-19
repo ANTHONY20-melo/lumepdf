@@ -1,0 +1,73 @@
+{
+  "name": "lumepdf",
+  "version": "1.0.0",
+  "description": "LumePDF — ferramentas de PDF gratuitas que rodam 100% local (web + desktop Electron + mobile Capacitor)",
+  "main": "desktop/main.js",
+  "author": "Anthony / LumePDF",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron desktop/main.js",
+    "dist": "electron-builder --win nsis --x64 --publish never",
+    "mobile:init": "npx cap init",
+    "mobile:add:android": "npx cap add android",
+    "mobile:add:ios": "npx cap add ios",
+    "mobile:sync": "npx cap sync",
+    "mobile:open:android": "npx cap open android",
+    "mobile:open:ios": "npx cap open ios",
+    "mobile:build:android": "npx cap build android",
+    "mobile:build:ios": "npx cap build ios",
+    "mobile:run:android": "npx cap run android",
+    "mobile:run:ios": "npx cap run ios",
+    "serve": "npx http-server . -p 8086 -c-1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.0",
+    "@capacitor/core": "^6.1.0",
+    "@capacitor/android": "^6.1.0",
+    "@capacitor/ios": "^6.1.0",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8",
+    "http-server": "^14.1.1",
+    "jszip": "^3.10.2",
+    "pdf-lib": "^1.17.1",
+    "playwright-core": "^1.65.0",
+    "pptxgenjs": "^4.0.1",
+    "xlsx": "^0.18.5"
+  },
+  "build": {
+    "appId": "com.anthotec.lumepdf",
+    "productName": "LumePDF",
+    "directories": {
+      "output": "dist",
+      "buildResources": "desktop"
+    },
+    "files": [
+      "index.html",
+      "*.html",
+      "css/**/*",
+      "js/**/*",
+      "desktop/main.js",
+      "desktop/icon.ico"
+    ],
+    "win": {
+      "icon": "desktop/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "LumePDF"
+    },
+    "compression": "maximum"
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF para Excel | LumePDF</title>
+  <meta name="description" content="Retire dados de PDFs para planilhas Excel (.xlsx) direto no navegador.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cpath d='M13 4 7 14h4l-.5 6L17 10h-4l0-6z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="ferr-voltar" href="index.html">&#8592; Todas as ferramentas</a>
+  <main>
+    <section class="ferr-hero">
+      <div class="ferr-icone"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18M3 15h18M15 3v18"/></svg></div>
+      <h1>PDF para Excel</h1>
+      <p>Retire dados direto de PDFs para planilhas do Excel (.xlsx) em poucos segundos.</p>
+    </section>
+    <div class="ferr-corpo" id="app"></div>
+  </main>
+  <script src="js/comum.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script>window.LUME_FERRAMENTA_ID = "pdf-para-excel";</script>
+  <script src="js/ferramenta.js"></script>
+</body>
+</html>
